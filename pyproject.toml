@@ -1,0 +1,48 @@
+[project]
+name = "skillshot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Hassan Kibirige", email = "has2k1@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "claude-agent-sdk>=0.2.87",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.28,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.409",
+    "pytest>=9.0.3",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.15.14",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+########## Tool - ruff ##########
+[tool.ruff]
+src = ["src"]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided
+lint.fixable = ["ALL"]
+
+[tool.uv]
+package = true
+
+
+########## Tool - pyright ##########
+[tool.pyright]
+# specified, the root path for the workspace is assumed.
+include = [
+    "src/"
+]
+
+typeCheckingMode = "strict"
