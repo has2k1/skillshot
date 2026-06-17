@@ -11,9 +11,9 @@ SDK messages yourself.
 ## Install
 
 ```bash
-uv add skillshot
+uv add git+https://github.com/has2k1/skillshot.git
 # or
-uv pip install skillshot
+uv pip install git+https://github.com/has2k1/skillshot.git
 ```
 
 Requires Python 3.11+.
